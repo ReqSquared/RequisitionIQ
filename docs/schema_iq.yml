@@ -42,14 +42,14 @@ notes:
 # ---------- lineage and sampling controls
 
 lineage_sort_column: >
-  Column used to order records before sampling. Used only when lineage_top_n is set, so the "most recent N" can be selected.
+  Column used to order records before sampling. Used only when lineage_top_n is set, so the "most recent n" can be selected.
 
 lineage_top_n: >
-  Sample size parameter (N). If set, the comparison population is limited to N observations per group.
+  Sample size parameter (n). If set, the comparison population is limited to n observations per group.
   If null/None, no sampling is applied and the full group population is used.
 
 lineage_timestamp: >
-  Timestamp when this lineage snapshot was generated. Useful for audit and reproducibility.
+  Timestamp when this lineage snapshot was generated. Useful for auditing and reproducibility.
 
 lineage_cluster_name: >
   Label for the cluster definition used (the specific grouping recipe that produced this comparison population).
@@ -124,7 +124,7 @@ metric_direction_unique_id: >
 
 bin_unique_id_z_score_direction: >
   Directional correctness indicator for the individual observation.
-  Encodes whether the deviation is in the expected direction (+1), unexpected direction (-1), or neutral (0).
+  Encodes whether the deviation is in the expected direction (+1), unexpected direction (-1), or no direction (0).
 
 
 
