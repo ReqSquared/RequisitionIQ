@@ -7,10 +7,15 @@ A config-driven decision intelligence framework for Talent Acquisition.
 RequisitionIQ is built on a five-stage methodology:
 
 **Read** (Assumption): Signals, models, raw data, KPIs/SLAs. What do we think we know?
+
 **Engineer** (Structure): Explore, modify, classify, cluster, group. How do we organize what we have?
+
 **Qualify** (Proof): Variance within, variance between, similarity. Is what we found statistically real?
+
 **Investigate** (Conflict): Voting system, veto system. When signals disagree, who wins?
+
 **Quantify** (Action): Human-readable output for action. What does the person actually do with this?
+
 
 The framework is delivered across four levels:
 
