@@ -1,0 +1,25 @@
+# dataframe.yml — Pipeline configurations for each ETL-to-DF process
+
+filled_req_iq_cluster_1_df:
+
+  ##### DATAFRAMES (observation & population)
+  data_source: filled_reqs
+  observations:
+    column: calendar_quarter
+    equals: "2025 Q4"
+  population:
+    column: calendar_quarter
+    not_equals: "2025 Q4"
+
+  ##### SCHEMA_SELECTION
+  schema: schema_filled_reqs
+  unique_id: requisition_id
+
+  ##### METRIC_CONFIG
+  global_metrics: core_4_metrics
+
+  ##### CLUSTER CONFIG
+  cluster_config: req_iq_cluster_1
+
+  ##### ADDITIONAL CONFIG
+  sort_by_for_top_n: requisition_filled_date

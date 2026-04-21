@@ -1,0 +1,139 @@
+# schema_filled_reqs.yaml
+
+columns:
+  requisition_id:
+    dtype: category
+    description: "Unique requisition identifier"
+  
+  requisition_id_num:
+    dtype: int64
+    description: "Unique numeric requisition identifier"
+
+  requisition_status:
+    dtype: category
+    description: "The current status of the requisition"
+  
+  recruiter:
+    dtype: category
+    description: "Recruiter name/ID"
+  
+  country:
+    dtype: category
+    description: "Country code or name"
+  
+  job_group:
+    dtype: category
+    description: "Job classification group"
+  
+  job_family:
+    dtype: category
+    description: "Job family classification"
+  
+  job_level:
+    dtype: category
+    description: "Job level/seniority"
+  
+  applicants_total:
+    dtype: int64
+    description: "Total number of applicants"
+    direction: 0
+    floor: 5
+    ceiling: 100
+    z_score_normal: 0.85
+    z_score_watch: 1.15
+    z_score_monitor: 1.96
+    z_score_inspect: 2.5
+    survival_25th: 0
+    survival_50th: 0.5
+    survival_75th: 1
+
+  applicants_reviewed:
+    dtype: int64
+    description: "Number of applicants reviewed"
+  
+  applicants_unreviewed:
+    dtype: int64
+    description: "Number of applicants not reviewed"
+  
+  applicants_reviewed_in_x_days:
+    dtype: int64
+    description: "Number reviewed within X days threshold"
+
+  percent_reviewed:
+    dtype: float32
+    description: "Percent of total applicants that have been reviewed (dispositioned or screened)"
+    direction: 1
+    floor: 0.50
+    ceiling: 1
+    z_score_normal: 0.85
+    z_score_watch: 1.15
+    z_score_monitor: 1.96
+    z_score_inspect: 2.5
+    survival_best: 75th
+    survival_25th: 0
+    survival_50th: 0.5
+    survival_75th: 1
+
+  percent_unreviewed:
+    dtype: float32
+    description: "Percent of total applicants that have not been reviewed. Still in apply step of ATS."
+  
+  percent_reviewed_in_x_days:
+    dtype: float32
+    description: "percent of applicants reviewed in X (determined by company on setup) days."
+    direction: 1
+    floor: 0.75
+    ceiling: 1
+    z_score_normal: 0.85
+    z_score_watch: 1.15
+    z_score_monitor: 1.96
+    z_score_inspect: 2.5
+    survival_best: 75th
+    survival_25th: 0
+    survival_50th: 0.5
+    survival_75th: 1
+
+  requisition_opened_date:
+    dtype: datetime64[ns]
+    description: "Date requisition was opened"
+  
+  days_to_first_screen:
+    dtype: float64
+    description: "Days from open to first screening"
+    direction: -1
+    floor: 0
+    ceiling: 14
+    z_score_normal: 3
+    z_score_watch: 3.5
+    z_score_monitor: 4
+    z_score_inspect: 4.5
+    survival_25th: 1
+    survival_50th: 0.5
+    survival_75th: 0
+
+  date_first_screen:
+    dtype: datetime64[ns]
+    description: "Date of first screening"
+  
+  time_to_fill:
+    dtype: float64
+    description: "Days from open to filled"
+    direction: -1
+    floor: 15
+    ceiling: 90
+    z_score_normal: 0.85
+    z_score_watch: 1.15
+    z_score_monitor: 1.96
+    z_score_inspect: 2.5
+    survival_25th: 1
+    survival_50th: 0.5
+    survival_75th: 0
+    max_metric_value: 150
+
+  requisition_filled_date:
+    dtype: datetime64[ns]
+    description: "Date requisition was filled"
+
+  calendar_quarter:
+    dtype: category
+    description: "Year-Quarter requisition was filled"
