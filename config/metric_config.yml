@@ -1,0 +1,31 @@
+global_metrics:
+  core_4_metrics: ["days_to_first_screen","time_to_fill","percent_reviewed","percent_reviewed_in_x_days"]
+  federal_metrics: ["Total_Applications","Number_of_Selections_Made_off_this_Job_Announcement"]
+
+# ---------- req_iq_cluster_1_config
+
+req_iq_cluster_1:
+  # cluster_group_level (each group can optionally specify top_n)
+  recruiter_context:
+    top_n: 42 
+    lineage_columns:
+      - ["recruiter", "country", "job_group", "job_family", "job_level"] # lineage_column_level = 5
+      - ["recruiter", "country", "job_group", "job_family"] # lineage_column_level = 4
+      - ["recruiter", "country", "job_group"] # lineage_column_level = 3
+      - ["recruiter", "country"] # lineage_column_level = 2
+      - ["recruiter"] # lineage_column_level = 1
+
+  country_context:
+    top_n: 240 
+    lineage_columns:
+      - ["country", "job_group", "job_family", "job_level"]
+      - ["country", "job_group", "job_family"]
+      - ["country", "job_group"]
+      - ["country"]
+
+  job_group_context:
+    top_n: 480
+    lineage_columns:
+      - ["job_group", "job_family", "job_level"]
+      - ["job_group", "job_family"]
+      - ["job_group"]
